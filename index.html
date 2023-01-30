@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Lab 3: Mad Libs</title>
+</head>
+<body>
+
+    <div class="container">  
+
+        <h1>Lab 3: Mad Libs Project</h1>
+        <p>Fill out the form to generate your story.</p> 
+
+        <form method= "get" id="form">
+
+            <div class="form-group">
+                <label for="pluralNoun">Plural Noun</label>
+                <input type="text" name="pluralNoun" id="pluralNoun" placeholder="Add a plural noun">
+            </div>
+
+            <div class="form-group">
+                <label for="pastVerb">Past Tense Verb</label>
+                <input type="text" name="pastVerb" id="pastVerb" placeholder="Add a past tense verb">
+            </div>
+        
+            <div class="form-group">
+                <label for="place">Place</label>
+                <input type="text" name="place" id="place" placeholder="Add a place">
+            </div>
+
+            <div class="form-group">
+                <label for="pastVerb2">Past Tense Verb</label>
+                <input type="text" name="pastVerb2" id="pastVerb2" placeholder="Add past tense verb">
+            </div>
+
+            <div class="form-group">
+                <label for="noun">Noun</label>
+                <input type="text" name="noun" id="noun" placeholder="Add a noun">
+            </div>
+
+            <div class="form-group">
+                <label for="timeInterval">Time Interval</label>
+                <input type="text" name="timeInterval" id="timeInterval" placeholder="Add an interval of time">
+            </div>
+
+            <div class="form-group">
+                <label for="pastVerb3">Past Tense Verb</label>
+                <input type="text" name="pastVerb3" id="pastVerb3" placeholder="Add a past tense verb">
+            </div>
+
+            <div class="form-group">
+                <label for="noun2">Noun</label>
+                <input type="text" name="noun2" id="noun2" placeholder="Add a noun">
+            </div>
+
+            <div class="form-group">
+                <label for="properPlace">Proper Place</label>
+                <input type="text" name="properPlace" id="properPlace" placeholder="Add a proper place">
+            </div>
+
+            <div class="form-group">
+                <label for="adjective">Adjective</label>
+                <input type="text" name="adjective" id="adjective" placeholder="Add an adjective">
+            </div>
+            <button id="submit" type="submit" class="button">Generate Story</button>      
+        </form>
+
+        <div id="story"></div>
+
+        
+
+    </div>
+
+    
+</body>
+
+<script>
+    const form = document.getElementById('form');
+    const submit = document.getElementById('submit');
+    const story = document.querySelector('.container');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const pluralNoun = document.getElementById('pluralNoun').value;
+        const pastVerb = document.getElementById('pastVerb').value;
+        const place = document.getElementById('place').value;
+        const pastVerb2 = document.getElementById('pastVerb2').value;
+        const noun = document.getElementById('noun').value;
+        const timeInterval = document.getElementById('timeInterval').value;
+        const pastVerb3 = document.getElementById('pastVerb3').value;
+        const noun2 = document.getElementById('noun2').value;
+        const properPlace = document.getElementById('properPlace').value;
+        const adjective = document.getElementById('adjective').value;
+
+        story.innerHTML = `<p> A group of ${pluralNoun} ${pastVerb} to a ${place}. <br>
+        When they got there, they were ${pastVerb2} by a ${noun}. <br>
+        After ${timeInterval} they ${pastVerb3} a ${noun2}. <br>
+        Then they returned to ${properPlace} and were very ${adjective}. </p>`;
+        
+        story.innerHTML += `<a href="index.html">Return to Mad Libs</a>`;
+    });
+</script>
+
+</html>
